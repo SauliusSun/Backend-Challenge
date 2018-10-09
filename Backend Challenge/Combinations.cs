@@ -10,7 +10,7 @@ namespace Backend_Challenge
 
         public static string[] GetAllPossible(string[] words, int anagramLength, int anagramLongestWordLength)
         {
-            var combinations = new string[1000000];
+            var combinations = new string[10000000];
             var combinationIndex = 0;
            
             for (var phraseCount = 0; phraseCount < words.Length; phraseCount++)
