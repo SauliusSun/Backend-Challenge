@@ -12,7 +12,6 @@ namespace Backend_Challenge
 			var anagramWords = Anagram.FilterPossible(words); // 1788
 			var longestAnagramWordLength = anagramWords.OrderByDescending(a => a.Length).First().Length;
 
-			//var words = new List<string> { "a", "b", "c"};
 			var wordCombinations = Combinations.GetAllPossible(anagramWords.ToArray(), Anagram.Phrase.Length, longestAnagramWordLength);
 
 			foreach (var wordCombination in wordCombinations)
