@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Text;
+using Backend_Challenge.Helpers;
 
 namespace Backend_Challenge
 {
@@ -8,7 +9,7 @@ namespace Backend_Challenge
 	{
 		private static readonly Stopwatch StopWatch1 = new Stopwatch();
 
-		public static string[] GetAllPossible(string[] words, int anagramLength, int anagramLongestWordLength)
+		public static string[] GetAllPossible(string[] words, int phraseLength)
 		{
 			var combinations = new string[10000000];
 			var combinationIndex = 0;
@@ -19,18 +20,19 @@ namespace Backend_Challenge
 				StopWatch1.Start();
 				for (var wordIndex = 0; wordIndex < words.Length; wordIndex++)
 				{
-					var phrase = GetPhrase(wordIndex, phraseCount, words);
+					var possibleAnagramPhrase = GetPhrase(wordIndex, phraseCount, words);
 
-					AddCombination(phrase, anagramLength, combinations, ref combinationIndex);
+					AddCombination(possibleAnagramPhrase, combinations, ref combinationIndex);
 
-					if (phrase.Length + anagramLongestWordLength < anagramLength)
+					if (possibleAnagramPhrase.Length >= 21)
 						break;
 
 					foreach (var additionalPhraseWord in words)
 					{
-						phrase.Append(additionalPhraseWord);
-						AddCombination(phrase, anagramLength, combinations, ref combinationIndex);
-						phrase.Remove(phrase.Length - additionalPhraseWord.Length, additionalPhraseWord.Length);
+						possibleAnagramPhrase.Append(StringHelper.WhiteSpace);
+						possibleAnagramPhrase.Append(additionalPhraseWord);
+						AddCombination(possibleAnagramPhrase, combinations, ref combinationIndex);
+						possibleAnagramPhrase.Remove(possibleAnagramPhrase.Length - additionalPhraseWord.Length, additionalPhraseWord.Length);
 					}
 				}
 				StopWatch1.Stop();
@@ -48,19 +50,15 @@ namespace Backend_Challenge
 				return phrase.Append(words[wordIndex]);
 
 			for (var phraseIndex = 0; phraseIndex < phraseCount; phraseIndex++)
-			{
 				phrase.Append(words[phraseIndex]);
-			}
 
 			return phrase;
 		}
 
-		private static void AddCombination(StringBuilder phrase, int anagramLength, string[] combinations, ref int combinationIndex)
+		private static void AddCombination(StringBuilder phrase, string[] combinations, ref int combinationIndex)
 		{
-			if (phrase.Length == anagramLength)
-			{
+			if (phrase.Length == 20 || phrase.Length == 21)
 				combinations[combinationIndex++] = phrase.ToString();
-			}
 		}
 	}
 }

@@ -2,7 +2,7 @@
 {
 	public static class StringHelper
 	{
-		private const string WhiteSpace = " ";
+		public const string WhiteSpace = " ";
 
 		public static char GetComparable(this char value)
 		{
