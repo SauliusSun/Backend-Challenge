@@ -9,15 +9,8 @@ namespace Backend_Challenge
 		internal static void Main()
 		{
 			var words = File.ReadLines("wordlist").ToList(); // 99175
-			var possibleWords = Anagram.FilterPossible(words); // 1788
-
+			var possibleWords = Anagram.FilterPossible(words); // 1659
 			File.WriteAllLines(@"c:\Users\sauli\Desktop\possibleWords.txt", possibleWords);
-
-			// 3 words 
-			
-
-
-
 
 			//ar longestAnagramWordLength = anagramWords.OrderByDescending(a => a.Length).First().Length;
 

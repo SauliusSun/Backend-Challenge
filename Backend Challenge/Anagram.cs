@@ -31,13 +31,16 @@ namespace Backend_Challenge
 			return true;
 		}
 
-		public static IList<string> FilterPossible(IList<string> words)
+		public static IEnumerable<string> FilterPossible(ICollection<string> words)
 		{
-			var possibleWords = new List<string>();
-			string comparablePhrase = Phrase.GetComparable();
+			var possibleWords = new HashSet<string>();
+			var comparablePhrase = Phrase.GetComparable();
 
 			foreach (var word in words)
 			{
+				if (string.IsNullOrWhiteSpace(word))
+					continue;
+
 				var comparableWord = word.GetComparable();
 				var add = true;
 				foreach (var letter in comparableWord)
