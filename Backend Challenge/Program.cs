@@ -9,18 +9,27 @@ namespace Backend_Challenge
 		internal static void Main()
 		{
 			var words = File.ReadLines("wordlist").ToList(); // 99175
-			var anagramWords = Anagram.FilterPossible(words); // 1788
-			var longestAnagramWordLength = anagramWords.OrderByDescending(a => a.Length).First().Length;
+			var possibleWords = Anagram.FilterPossible(words); // 1788
 
-			var wordCombinations = Combinations.GetAllPossible(anagramWords.ToArray(), Anagram.Phrase.Length, longestAnagramWordLength);
+			File.WriteAllLines(@"c:\Users\sauli\Desktop\possibleWords.txt", possibleWords);
 
-			foreach (var wordCombination in wordCombinations)
-			{
-				if (wordCombination.IsAnagram(Anagram.Phrase))
-					Console.WriteLine(wordCombination);
-			}
+			// 3 words 
+			
 
-			Console.ReadLine();
+
+
+
+			//ar longestAnagramWordLength = anagramWords.OrderByDescending(a => a.Length).First().Length;
+
+			//var wordCombinations = Combinations.GetAllPossible(anagramWords.ToArray(), Anagram.Phrase.Length, longestAnagramWordLength);
+
+			//foreach (var wordCombination in wordCombinations)
+			//{
+			//	if (wordCombination.IsAnagram(Anagram.Phrase))
+			//		Console.WriteLine(wordCombination);
+			//}
+
+			Console.WriteLine("End");
 		}
 	}
 }

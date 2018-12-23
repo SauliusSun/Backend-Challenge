@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend Challenge", "Backend Challenge\Backend Challenge.csproj", "{B93D5D4F-1908-4EBF-BC57-FDBBF746A43F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendChallenge", "Backend Challenge\BackendChallenge.csproj", "{B93D5D4F-1908-4EBF-BC57-FDBBF746A43F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendChallengeTests", "BackendChallengeTests\BackendChallengeTests.csproj", "{AFD8FE51-4EE1-4841-99BB-D1CF48601F80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B93D5D4F-1908-4EBF-BC57-FDBBF746A43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B93D5D4F-1908-4EBF-BC57-FDBBF746A43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B93D5D4F-1908-4EBF-BC57-FDBBF746A43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD8FE51-4EE1-4841-99BB-D1CF48601F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD8FE51-4EE1-4841-99BB-D1CF48601F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD8FE51-4EE1-4841-99BB-D1CF48601F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD8FE51-4EE1-4841-99BB-D1CF48601F80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
