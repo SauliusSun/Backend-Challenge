@@ -13,11 +13,12 @@ namespace Backend_Challenge
 			var possibleWords = Anagram.Filter(words); // 1659
 			File.WriteAllLines(@"c:\Users\sauli\Desktop\possibleWords.txt", possibleWords);
 
-			var anagrams = Anagram.SearchForAnagram(Anagram.Phrase, possibleWords.ToList(), 3);
+			var anagrams = Anagram.SearchForAnagram(Anagram.Phrase, possibleWords.ToList(), 4);
 			File.WriteAllLines(@"c:\Users\sauli\Desktop\anagrams.txt", anagrams);
 
 			Md5Cryptography.Check(anagrams);
 			Console.WriteLine("End");
+			Console.ReadLine();
 		}
 	}
 }
